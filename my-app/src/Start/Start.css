@@ -1,0 +1,115 @@
+
+
+.Start1 {
+    background-color: rgba(20, 24, 28, 0.9); 
+    min-height: 100vh;
+    color: white;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.box
+{
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 100px;
+    width: 100px;
+    border-radius: 10px;
+    animation: box 6s forwards;
+    transition: ease;
+    position: relative;
+
+}
+@keyframes box {
+    0%{
+       transform: rotate(0deg);
+          background-color: rgba(0, 0, 0, 0.516);
+          left:-300px;
+
+       }
+       50%
+       {    background-color: rgba(203, 30, 30, 0.779);
+        left:  150px        ;
+
+       }
+    100%{
+    background-color: rgba(0, 0, 0, 0);
+
+        transform: rotate(360deg);
+        left: 0px;
+
+    }
+}
+
+
+.box1
+{
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 100px;
+    width: 100px;
+    border-radius: 10px;
+    animation: box1 6s forwards ;
+    transition: ease;
+    position: relative;
+
+}
+@keyframes box1 {
+    0%{
+       transform: rotate(0deg);
+          background-color: rgba(0, 0, 0, 0.516);
+          left:-300px;
+
+       }
+       50%
+       {    background-color: rgba(203, 30, 30, 0.779);
+        left:  150px        ;
+
+       }
+    100%{
+    background-color: rgba(0, 0, 0, 0);
+
+        transform: rotate(360deg);
+        left: 0px;
+
+    }
+}
+.box2 {
+    background-color: rgba(0, 0, 0, 0.516);
+    padding: 100px;
+    width: 100px;
+    border-radius: 10px;
+    animation: box2 3s forwards ;
+    animation-delay: 3.5s;
+    position: absolute;     
+    right: -300px; 
+    bottom: 600px;
+    overflow: hidden;
+}
+
+@keyframes box2 {
+    0% {
+        right: -300px; 
+        top: 0px;
+        background-color: azure;
+    }
+ 50%{
+    right: 1200px; 
+    top: 700px;
+    background-color: brown;
+}
+ 
+    100% {
+        right: -300px; 
+        top: 0px;
+        background-color: azure;
+
+    }
+}
+
+.name b
+{
+    color: red;
+}
+.name span
+{
+    color: white;
+}
