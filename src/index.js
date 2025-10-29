@@ -11,41 +11,25 @@ import Contactus from './Component/Contactus';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cursor from './CSS/Cursor';
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-let rout=createBrowserRouter([
- 
+const router = createBrowserRouter(
+  [
+    { path: '/', element: <Home /> },
+    { path: '/Project', element: <Project /> },
+    { path: '/Language', element: <Language /> },
+    { path: '/About', element: <Aboutus /> },
+    { path: '/contact', element: <Contactus /> },
+    { path: '/cursor', element: <Cursor /> },
+  ],
   {
-    path:'/',
-    element:<Home/>
-  },
-  {
-    path:'/Project',
-    element:<Project/>
-  },
-  {
-    path:'/Language',
-    element:<Language/>
-  },
-  {
-    path:'/About',
-    element:<Aboutus/>
-  },
-  {
-    path:'/contect',
-    element:<Contactus/>
-  },
-  {
-    path:'/cursor',
-    element:<Cursor/>
-  },
-  
-])
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={rout}/>
-  </React.StrictMode>
+    basename: '/', 
+  }
 );
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
 
 reportWebVitals();
