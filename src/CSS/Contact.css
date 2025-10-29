@@ -1,0 +1,95 @@
+.contact {
+  background-color: #000;
+  background-image: url("../images/bg2.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactus {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+  text-align: center;
+}
+
+.contactus h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #00aaff;
+  letter-spacing: 1px;
+}
+
+.contactus h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.contactus h4 {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.contactus a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contactus a:hover {
+  color: #00aaff;
+  text-decoration: underline;
+}
+
+.contact-links p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.contactus .fa-whatsapp {
+  color: #4fce5d;
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+
+.contactus .fa-linkedin {
+  color: #0077b5;
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+
+.contactus .fa-instagram {
+  background: linear-gradient(
+    45deg,
+    #f58529,
+    #feda77,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+
+#email {
+  font-size: 1.6em;
+  margin-right: 10px;
+  color: #33b2e1;
+}
+
+.thanku {
+  color: #f1f1f1;
+  margin-top: 30px;
+  font-size: 1.3em;
+}

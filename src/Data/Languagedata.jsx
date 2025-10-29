@@ -5,6 +5,7 @@ import sql from "../images/sql.png";
 import react from "../images/react.png";
 import js from "../images/js.png";
 import uiux from "../images/th.jpeg";
+import Spring from "../images/Spring.png"
 export let landata=[
  {
     img:java,
@@ -57,5 +58,13 @@ export let landata=[
     skills:'Responsive design ,Colore Combination,Prototyping',
     project:'App Design ,Web Design',
     rating:8
+},
+{
+    img:Spring,
+    lanname: "Spring Boot",
+        skills: "Microservices, Dependency Injection, REST APIs",
+        project: "Tournament Management System",
+        rating:7
+
 }
 ]

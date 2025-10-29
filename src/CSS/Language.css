@@ -1,0 +1,118 @@
+.dev-container {
+  background-color: #000;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.skill-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00aaff;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* === Grid === */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* === Card === */
+.lan-card {
+  position: relative;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.lan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.lan-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #00aaff, #be65be, #00ffff);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.lan-card:hover .lan-glow {
+  opacity: 0.5;
+}
+
+.imagelan {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px 0;
+  border: 3px solid #00aaff;
+  z-index: 1;
+  position: relative;
+}
+
+.lan-card h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.lan-card p,
+.lan-card h3,
+.lan-card h5 {
+  color: #ddd;
+  margin: 6px 0;
+  z-index: 1;
+  position: relative;
+}
+
+span {
+  color: #00aaff;
+  font-weight: 600;
+}
+
+.rating {
+  width: 80%;
+  height: 6px;
+  border-radius: 20px;
+  margin: 10px auto 0;
+  animation: fill 1s ease-in-out;
+}
+
+@keyframes fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-title {
+    font-size: 1.6rem;
+  }
+  .imagelan {
+    width: 100px;
+    height: 100px;
+  }
+}

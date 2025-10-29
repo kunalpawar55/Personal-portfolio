@@ -1,0 +1,140 @@
+.about-section {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 40px;
+}
+
+.about-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 60%;
+}
+
+.about-right {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-title {
+  font-size: 2.2rem;
+  color: #00aaff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease;
+}
+
+.journey-title {
+  color: #00aaff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.about-text {
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.what-i-do h2 {
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.what-i-do ul {
+  list-style: none;
+  padding: 0;
+}
+
+.what-i-do ul li {
+  margin: 10px 0;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.blue {
+  color: #00aaff;
+}
+
+.btn-container {
+  margin-top: 30px;
+}
+
+.download-btn {
+  background: linear-gradient(90deg, #00aaff, #0077ff);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.download-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00aaff;
+}
+
+.image-wrapper {
+  border-radius: 50%;
+  padding: 10px;
+  background: radial-gradient(circle, rgba(0, 170, 255, 0.3), transparent);
+}
+
+.kunal-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00aaff;
+  transition: transform 0.5s ease;
+}
+
+.kunal-img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-left {
+    max-width: 100%;
+  }
+
+  .kunal-img {
+    width: 180px;
+    height: 180px;
+  }
+}

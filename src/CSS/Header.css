@@ -1,0 +1,138 @@
+/* Header styling directly targeting tag */
+header {
+  background: rgba(10, 10, 15, 0.95);
+  color: #eaeaea;
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 191, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+#logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-size: 17px;
+  font-weight: 500;
+  position: relative;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00bfff;
+  box-shadow: 0 0 8px #00bfff;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Right section */
+#rightSection {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+#rightSection button {
+  border: 1px solid #00bfff;
+  background: transparent;
+  color: #00bfff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+#rightSection button:hover {
+  background-color: #00bfff;
+  color: #0d0d0f;
+  box-shadow: 0 0 20px #00bfff;
+  transform: translateY(-2px);
+}
+
+/* Social icons */
+#socialIcons a {
+  color: #eaeaea;
+  font-size: 22px;
+  margin-left: 12px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#socialIcons a:hover {
+  color: #00bfff;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #00bfff;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #rightSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #rightSection button {
+    width: 80%;
+  }
+}

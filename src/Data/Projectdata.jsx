@@ -1,8 +1,8 @@
 import airo from'../images/Airoplane.jpg'
 import world from'../images/images.jpeg'
-import logo from '../images/logo.png'
 import uiux from '../images/Landing.jpg'
 import cafe from '../images/CAFE.jpeg'
+import sport from'../images/Sports.jpg'
 export const data = [
     {
       id: 1,
@@ -48,6 +48,19 @@ full-stack development, database integration, session management, and security m
     3. User Interface: Fully responsive design for all devices, intuitive navigation, and efficient search functionality.
     4. Styling and Design: Modern, visually appealing design with Tailwind CSS for a clean, responsive layout.`,
       imag:cafe
+    },
+    {
+      id: 5,
+  title: "Tournament Management System",
+  description: `I developed a comprehensive Tournament Management System using React.js, showcasing my ability to create robust, user-centric applications. Key features include:
+
+1. Dynamic Match Listings: Displays upcoming matches with real-time updates, including details like date, prizes, and contact information.
+2. WhatsApp Integration: Direct contact option for organizers via WhatsApp for seamless communication.
+3. Add Tournament Feature: An easy-to-use form for adding tournaments, with validation and smooth submission functionality.
+4. Responsive UI: Fully optimized for all devices, ensuring a seamless experience on desktops, tablets, and mobiles.
+5. Modern Design: Stylish interface crafted using Tailwind CSS, ensuring both functionality and aesthetic appeal.
+6. Search and Filters: Quick search options and dynamic filters to find specific matches or tournaments efficiently.`,
+      imag:sport
     }
     
     

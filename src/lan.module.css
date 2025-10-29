@@ -9,6 +9,7 @@
   overflow-x: auto;
   white-space: nowrap;
   transition: ease-in-out 1s;
+
 }
 
 
@@ -25,10 +26,14 @@
   flex: 0 0 auto;
   background-color: #222222; 
   text-align: center;
-  animation: upward 3s forwards;
-  cursor: url('./images/icons8-hand-cursor-50.png'),auto;
+  animation: upward 1s ;
+  transition: ease-in-out 0.8s;
+  overflow: hidden  ;
 }
-
+.imgJava:hover
+{
+padding: 25px;
+}
 
 .imgJava img {
   width: 100px;

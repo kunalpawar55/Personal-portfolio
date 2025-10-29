@@ -7,22 +7,24 @@ import react from './images/react.png';
 import js from './images/js.png';
 import styles from './lan.module.css';
 import uiux from './images/th.jpeg'
+import Spring from './images/Spring.png'
+
 import { Link, useNavigate } from 'react-router-dom';
 
 function Lan_com() {
 
-    
-        const navigate = useNavigate();
-      
-        const handleClick = () => {
-          navigate('/Language');
-        };
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/Language');
+  };
   return (
     <div>
       <div className="Language-container">
-      <h1>My Skills</h1>
-      
-      
+        <h1>My Skills</h1>
+
+
         <div className={styles.lan} onClick={handleClick}>
           <div className={styles.imgJava}>
             <img src={java} alt="Java" />
@@ -52,11 +54,15 @@ function Lan_com() {
             <img src={uiux} alt="uiux" />
             <h2>Ui/Ux</h2>
           </div>
-         
+          <div className={styles.imgJava}>
+            <img src={Spring} alt="Spring" />
+            <h2>Spring Boot</h2>
+          </div>
+
         </div>
-        <button onClick={handleClick} className={styles.btnlan}>Details</button> 
-        </div>
-        <br /><br /><br /><br /><br />
+        <button onClick={handleClick} className={styles.btnlan}>Details</button>
+      </div>
+      <br /><br /><br /><br /><br />
     </div>
   );
 }
