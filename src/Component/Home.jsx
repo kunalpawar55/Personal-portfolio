@@ -23,10 +23,13 @@ export default function Home() {
         <div className="intro-text">
           <h5><b>Introduction</b></h5>
           <p className="text">
-            I’m <b>Kunal Pawar</b>, a passionate developer with a background in
-            <b> Information Technology</b> (BSc 2023, MSc ongoing).  
-            I’ve completed a <b>Full Stack Development</b> course at Cyber Success and an internship at <b>CorefinXperts</b> in Pune.
-          </p>
+  I’m <b>Kunal Pawar</b>, a passionate developer with a strong foundation in
+  <b> Information Technology</b>. I graduated in 2023 and am currently pursuing
+  my <b>MSc in Information Technology</b>. I’ve also completed a
+  <b>Full Stack Development</b> course at Cyber Success and recently completed
+  an internship at <b>CorefinXperts</b> in Pune.
+</p>
+
           <Link to="/contect">
             <button className="conme">Contact Me</button>
           </Link>
