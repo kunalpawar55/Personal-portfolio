@@ -5,7 +5,7 @@ import imag1 from '../images/kunalp.jpg';
 import airplaneImage from '../images/Airoplane.jpg';
 import clock from '../images/images.jpeg';
 import '../CSS/Home.css';
-import LanCom from "../Lan_com";
+import LanCom from "./Lancom.jsx";
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Home() {
