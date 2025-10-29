@@ -11,20 +11,40 @@ import Contactus from './Component/Contactus';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cursor from './CSS/Cursor';
 
+// ✅ Router setup
 const router = createBrowserRouter(
   [
-    { path: '/', element: <Home /> },
-    { path: '/Project', element: <Project /> },
-    { path: '/Language', element: <Language /> },
-    { path: '/About', element: <Aboutus /> },
-    { path: '/contact', element: <Contactus /> },
-    { path: '/cursor', element: <Cursor /> },
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/project',
+      element: <Project />,
+    },
+    {
+      path: '/language',
+      element: <Language />,
+    },
+    {
+      path: '/about',
+      element: <Aboutus />,
+    },
+    {
+      path: '/contact', 
+      element: <Contactus />,
+    },
+    {
+      path: '/cursor',
+      element: <Cursor />,
+    },
   ],
   {
-    basename: '/', 
+    basename: '/', // ✅ Important for Netlify
   }
 );
 
+// ✅ Render app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
