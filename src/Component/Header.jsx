@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../images/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import '../CSS/Header.css';
 import resumePDF from "../images/Resume_Kunal_J_Pawar.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faWhatsapp, faLinkedin,  faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faWhatsapp, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = () => {
     navigate('/');
+    setMenuOpen(false);
   };
 
   const handleDownload = () => {
@@ -22,29 +25,29 @@ export default function Header() {
 
   return (
     <header>
-      <div id="leftSection">
-        <img
-          src={logo}
-          alt="Logo"
-          id="logo"
-          onClick={handleClick}
-        />
+      <div className="header-left">
+        <img src={logo} alt="Logo" id="logo" onClick={handleClick} />
       </div>
 
-      <nav>
+      {/* Hamburger for mobile */}
+      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+      </div>
+
+      <nav className={menuOpen ? "active" : ""}>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/Project">Projects</Link></li>
-          <li><Link to="/Language">Skills</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/About">About</Link></li>
+          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/Project" onClick={() => setMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="/Language" onClick={() => setMenuOpen(false)}>Skills</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          <li><Link to="/About" onClick={() => setMenuOpen(false)}>About</Link></li>
         </ul>
       </nav>
 
       <div id="rightSection">
         <button onClick={handleDownload}>Download Resume</button>
         <div id="socialIcons">
-          <a href="www.linkedin.com/in/kunal-pawar-4b6942289" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/kunal-pawar-4b6942289" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">
@@ -56,7 +59,6 @@ export default function Header() {
           <a href="https://github.com/kunalpawar55" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          
         </div>
       </div>
     </header>
