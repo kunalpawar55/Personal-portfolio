@@ -101,7 +101,7 @@ nav ul li a:hover::after {
   text-shadow: 0 0 10px #00bfff;
 }
 
-/* Hamburger Menu (Mobile) */
+/* Hamburger Menu */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -113,16 +113,17 @@ nav ul li a:hover::after {
   transform: scale(1.2);
 }
 
-/* Animations */
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ Responsive Design */
+/* ✅ Responsive with smooth dropdown */
 @media (max-width: 950px) {
   header {
     padding: 12px 25px;
+    flex-wrap: wrap;
   }
 
   .menu-toggle {
@@ -130,31 +131,30 @@ nav ul li a:hover::after {
   }
 
   nav {
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
+    width: 100%;
+    text-align: center;
     background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(10px);
-    text-align: center;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.4s ease-in-out;
   }
 
   nav.active {
-    max-height: 300px;
-    border-top: 1px solid rgba(0, 191, 255, 0.2);
+    max-height: 300px; /* smooth dropdown height */
   }
 
   nav ul {
     flex-direction: column;
-    padding: 20px 0;
     gap: 18px;
+    padding: 18px 0;
   }
 
   #rightSection {
-    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
 }
 
@@ -162,5 +162,14 @@ nav ul li a:hover::after {
   #logo {
     width: 50px;
     height: 50px;
+  }
+
+  #rightSection button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  #socialIcons a {
+    font-size: 20px;
   }
 }
