@@ -44,7 +44,7 @@ export default function Aboutus() {
                 </li>
                 <li>
                   <b>Backend Development:</b> Skilled in <b>Java</b> and
-                  <b>Springboot</b> for building scalable backend systems.
+                  <b> Springboot</b> for building scalable backend systems.
                 </li>
                 <li>
                   <b>UI/UX Design:</b> Creating visually stunning and intuitive
