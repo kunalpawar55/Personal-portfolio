@@ -10,8 +10,7 @@ import Aboutus from './Component/Aboutus';
 import Contactus from './Component/Contactus';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cursor from './CSS/Cursor';
-
-// ✅ Router setup
+import Certification from './Component/Certification';
 const router = createBrowserRouter(
   [
     {
@@ -38,13 +37,16 @@ const router = createBrowserRouter(
       path: '/cursor',
       element: <Cursor />,
     },
+    {
+      path: '/certification',
+      element:<Certification/> ,
+    }
   ],
   {
-    basename: '/', // ✅ Important for Netlify
+    basename: '/', 
   }
 );
 
-// ✅ Render app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

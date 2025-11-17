@@ -1,0 +1,39 @@
+.main-certification
+{
+    background-color: black;
+    color:white;
+}
+.main-certification h1{
+    text-align: center;
+    padding: 50px;
+    font-size: 36px;
+    font-weight: 700;
+    border: 1px solid white;
+}
+.certification {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.certification-image h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.certification-image img {
+  width: 300px;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.certification-image img:hover {
+  transform: scale(1.03);
+}

@@ -41,6 +41,8 @@ export default function Header() {
           <li><Link to="/Language" onClick={() => setMenuOpen(false)}>Skills</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           <li><Link to="/About" onClick={() => setMenuOpen(false)}>About</Link></li>
+          <li><Link to="/certification" onClick={() => setMenuOpen(false)}>Certification</Link></li>
+
         </ul>
       </nav>
 
@@ -59,6 +61,7 @@ export default function Header() {
           <a href="https://github.com/kunalpawar55" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
+
         </div>
       </div>
     </header>

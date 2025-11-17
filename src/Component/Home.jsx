@@ -26,7 +26,7 @@ export default function Home() {
   I’m <b>Kunal Pawar</b>, a passionate developer with a strong foundation in
   <b> Information Technology</b>. I graduated in 2023 and am currently pursuing
   my <b>MSc in Information Technology</b>. I’ve also completed a
-  <b>Full Stack Development</b> course at Cyber Success and recently completed
+  <b> Full Stack Development</b> course at Cyber Success and recently completed
   an internship at <b>CorefinXperts</b> in Pune.
 </p>
 
