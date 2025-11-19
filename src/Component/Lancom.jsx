@@ -7,7 +7,7 @@ import react from '../images/react.png';
 import js from '../images/js.png';
 import uiux from '../images/th.jpeg';
 import Spring from '../images/Spring.png';
-import '../CSS/Lancom.css';  // ✅ direct CSS import, not as module
+import '../CSS/Lancom.css';  
 import { useNavigate } from 'react-router-dom';
 
 function Lan_com() {

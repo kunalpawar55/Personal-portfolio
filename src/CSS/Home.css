@@ -7,14 +7,12 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- MAIN ---------- */
 .main {
   background: radial-gradient(circle at top, #0d0d0f 60%, #050505);
   color: #f0f0f0;
   min-height: 100vh;
 }
 
-/* ---------- INTRO SECTION ---------- */
 .intro {
   display: flex;
   align-items: center;
@@ -58,7 +56,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ---------- CONTACT BUTTON ---------- */
 .conme {
   padding: 12px 28px;
   font-size: 1rem;
@@ -77,7 +74,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* ---------- PROJECT SECTION ---------- */
 .projects-section {
   padding: 60px 20px 80px;
   text-align: center;
@@ -125,7 +121,6 @@ body {
   color: #fff;
 }
 
-/* ---------- MORE PROJECT BUTTON ---------- */
 .morepro {
   margin-top: 50px;
   padding: 12px 35px;
@@ -145,7 +140,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* ---------- ANIMATIONS ---------- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -156,7 +150,6 @@ body {
   50% { transform: translateY(-8px); }
 }
 
-/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .intro {
     flex-direction: column;
