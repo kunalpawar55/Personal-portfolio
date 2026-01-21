@@ -88,62 +88,62 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+{/* RIGHT SECTION */}
+<div className="flex items-center gap-4">
 
-        {/* RIGHT SECTION */}
-        <div className="hidden md:flex items-center gap-5">
+  {/* Resume button — mobile pe hide */}
+  <button
+    onClick={handleDownload}
+    className="hidden md:block
+               border border-sky-400 text-sky-400
+               px-4 py-2 rounded-lg text-sm
+               hover:bg-sky-400 hover:text-black
+               hover:shadow-[0_0_20px_#00bfff]
+               hover:-translate-y-1
+               transition-all duration-300"
+  >
+    Download Resume
+  </button>
 
-          {/* Resume */}
-          <button
-            onClick={handleDownload}
-            className="border border-sky-400 text-sky-400
-                       px-4 py-2 rounded-lg text-sm
-                       hover:bg-sky-400 hover:text-black
-                       hover:shadow-[0_0_20px_#00bfff]
-                       hover:-translate-y-1
-                       transition-all duration-300"
-          >
-            Download Resume
-          </button>
+  {/* SOCIAL ICONS */}
+  <div className="flex gap-4 text-lg md:text-xl">
+    <a
+      href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-sky-400 hover:scale-125 transition"
+    >
+      <FontAwesomeIcon icon={faLinkedin} />
+    </a>
 
-          {/* SOCIAL ICONS */}
-          <div className="flex gap-4 text-xl">
-            <a
-              href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-sky-400 hover:scale-125 transition"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
+    <a
+      href="https://instagram.com"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-sky-400 hover:scale-125 transition"
+    >
+      <FontAwesomeIcon icon={faInstagram} />
+    </a>
 
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-sky-400 hover:scale-125 transition"
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
+    <a
+      href="https://wa.me/917719000398"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-sky-400 hover:scale-125 transition"
+    >
+      <FontAwesomeIcon icon={faWhatsapp} />
+    </a>
 
-            <a
-              href="https://wa.me/917719000398"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-sky-400 hover:scale-125 transition"
-            >
-              <FontAwesomeIcon icon={faWhatsapp} />
-            </a>
-
-            <a
-              href="https://github.com/kunalpawar55"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-sky-400 hover:scale-125 transition"
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
+    <a
+      href="https://github.com/kunalpawar55"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-sky-400 hover:scale-125 transition"
+    >
+      <FontAwesomeIcon icon={faGithub} />
+    </a>
+  </div>
+</div>
       </div>
     </header>
   );
