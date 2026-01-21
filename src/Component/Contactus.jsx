@@ -43,7 +43,6 @@ export default function Contactus() {
           {/* LINKS */}
           <div className="flex flex-col gap-6 text-lg">
 
-            {/* EMAIL */}
             <a
               href="mailto:kunalpawar9230@gmail.com"
               className="flex items-center justify-center gap-4
@@ -55,10 +54,9 @@ export default function Contactus() {
                          transition-all duration-300"
             >
               <FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
-              <span>kunalpawar9230@gmail.com</span>
+              <span>Mail</span>
             </a>
 
-            {/* WHATSAPP */}
             <a
               href="https://wa.me/7719000398?text=Hello%20Kunal"
               target="_blank"
@@ -75,7 +73,6 @@ export default function Contactus() {
               <span>WhatsApp</span>
             </a>
 
-            {/* LINKEDIN */}
             <a
               href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
               target="_blank"
@@ -92,7 +89,6 @@ export default function Contactus() {
               <span>LinkedIn</span>
             </a>
 
-            {/* INSTAGRAM */}
             <a
               href="https://www.instagram.com/kunal_pawar77"
               target="_blank"
@@ -110,7 +106,6 @@ export default function Contactus() {
             </a>
           </div>
 
-          {/* THANK YOU */}
           <h3 className="mt-12 text-xl font-semibold text-sky-400">
             Thank You for Reaching Out! 🙏
           </h3>

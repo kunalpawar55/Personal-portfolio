@@ -105,7 +105,6 @@ export default function Header() {
     Download Resume
   </button>
 
-  {/* SOCIAL ICONS */}
   <div className="flex gap-4 text-lg md:text-xl">
     <a
       href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
