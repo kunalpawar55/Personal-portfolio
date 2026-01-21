@@ -12,7 +12,7 @@ export let landata=[
     lanname:"Java",
     skills:'Core Java, JDBC, Servlet, JSP, Hibernate,Opps,Collection',
     project:'Airoplane ticket Booking',
-    rating:8
+    rating:8.5
 },
 {
     img:Html,
@@ -35,7 +35,7 @@ export let landata=[
     lanname:"SQL",
     skills:'Basics of SQL,Data Types, SQL Queries and Clauses,Subqueries and Joins,Database Management Systems (DBMS), SQL Injection',
     project:'Airoplane ticket Booking',
-    rating:7
+    rating:8.5
 }
 ,
 {
@@ -43,14 +43,14 @@ export let landata=[
     lanname:"React",
     skills:' Basics of React,Components in React,JSX (JavaScript XML), State and Props,React Hooks,Event Handling,React Router,State Management',
     project:'Airoplane ticket Booking',
-    rating:8
+    rating:8.5
 },
 {
     img:js,
     lanname:"Java Script",
     skills:'Basics of JavaScript,Functions,Scope and Hoisting,Closures,Object-Oriented JavaScript,Web APIs, Frameworks and Libraries',
     project:'World clock',
-    rating:7
+    rating:8
 },
 {
     img:uiux,
@@ -62,9 +62,9 @@ export let landata=[
 {
     img:Spring,
     lanname: "Spring Boot",
-        skills: "Microservices, Dependency Injection, REST APIs",
+        skills: "JWT, Dependency Injection, REST APIs",
         project: "Tournament Management System",
-        rating:7
+        rating:8
 
 }
 ]

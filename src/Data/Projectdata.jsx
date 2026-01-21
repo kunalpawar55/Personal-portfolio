@@ -3,6 +3,7 @@ import world from'../images/images.jpeg'
 import uiux from '../images/Landing.jpg'
 import cafe from '../images/CAFE.jpeg'
 import sport from'../images/Sports.jpg'
+import carslelo from'../images/Carslelo.jpeg'
 export const data = [
     {
       id: 1,
@@ -61,6 +62,29 @@ full-stack development, database integration, session management, and security m
 5. Modern Design: Stylish interface crafted using Tailwind CSS, ensuring both functionality and aesthetic appeal.
 6. Search and Filters: Quick search options and dynamic filters to find specific matches or tournaments efficiently.`,
       imag:sport
+    },
+    {
+      id: 6,
+      title:"Cars bidding Website",
+      description:`CarsLelo is a full-stack web application designed to simplify car browsing, booking, and management.
+The platform allows users to register, log in securely, view available cars, and perform booking-related operations, while administrators can manage cars, users, and system data efficiently.
+
+The application follows a secure JWT-based authentication architecture and is built using Spring Boot for backend and React for frontend, ensuring scalability, security, and high performance.
+
+🔹 Tech Stack
+
+Backend: Java, Spring Boot, Spring Security, JWT
+
+Frontend: React.js, Axios
+
+Database: MySQL
+
+ORM: Hibernate / JPA
+
+Security: BCrypt Password Encoding, JWT Authentication
+
+Tools: Postman, Git, Maven`,
+      imag:carslelo
     }
     
     
