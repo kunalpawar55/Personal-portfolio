@@ -1,128 +1,204 @@
-import React from "react";
-import Header from "../Component/Header.jsx";
-import Footer from "../Component/Footer.jsx";
-import imag1 from "../images/kunalp.jpg";
-import airplaneImage from "../images/Airoplane.jpg";
-import clock from "../images/images.jpeg";
-import LanCom from "./Lancom.jsx";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faWhatsapp,
+  faInstagram,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import photo from "../images/kunalp.jpg";
+import Lan_com from "./Lancom";
 
-export default function Home() {
+export default function HeroSection() {
   const navigate = useNavigate();
 
+  const chips = [
+    "Frontend",
+    "React",
+    "Backend",
+    "Java",
+    "Spring Boot",
+    "MySQL",
+    "REST APIs",
+    "Git",
+  ];
+
+  // ✅ Rotating typewriter roles
+  const roles = [
+    "Java Full Stack Developer",
+    "Spring Boot Developer",
+    "React Developer",
+    "Backend Developer",
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  // ✅ Smooth typewriter effect
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+
+    const typingSpeed = isDeleting ? 35 : 80; // smoother
+    const pauseAfterTyped = 1200; // pause after full text
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        const nextText = currentRole.slice(0, typedText.length + 1);
+        setTypedText(nextText);
+
+        // Full typed -> pause then delete
+        if (nextText === currentRole) {
+          setTimeout(() => setIsDeleting(true), pauseAfterTyped);
+        }
+      } else {
+        const nextText = currentRole.slice(0, typedText.length - 1);
+        setTypedText(nextText);
+
+        // Fully deleted -> next role
+        if (nextText === "") {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [typedText, isDeleting, roleIndex]);
+
   return (
-    <div className="bg-[#0d0d0f] text-gray-200 min-h-screen overflow-x-hidden">
-      <Header />
+    <div>
+      <section className="w-full bg-white">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+            {/* LEFT */}
+            <div className="group">
+              <p className="text-gray-500 font-medium mb-3">Hi, I’m</p>
 
-      <section className="flex flex-wrap items-center justify-center gap-16 px-6 py-24">
+              <h1 className="text-5xl font-extrabold text-[#0B1B3A] leading-tight">
+                Kunal <span className="text-[#2563EB]">Pawar</span>
+              </h1>
 
-        <div className="max-w-xl">
-          <h5 className="text-4xl font-bold text-sky-400 mb-5 drop-shadow-[0_0_12px_#00bfff]">
-            Introduction
-          </h5>
+              {/* 🔥 ROTATING TYPEWRITER (SMOOTH) */}
+              <h2 className="text-2xl font-semibold text-[#0B1B3A] mt-4 leading-snug min-h-[34px]">
+                <span className="text-gray-500 font-semibold">I am a </span>
 
-          <p className="text-lg leading-relaxed text-gray-300 mb-8">
-            I’m <b className="text-white">Kunal Pawar</b>, a passionate developer
-            with a strong foundation in
-            <b className="text-sky-400"> Information Technology</b>.  
-            I graduated in 2023 and currently pursuing my
-            <b className="text-sky-400"> MSc in Information Technology</b>.
-            <br /><br />
-            I’ve completed a
-            <b className="text-sky-400"> Full Stack Development</b> course at
-            Cyber Success and recently completed an internship at
-            <b className="text-sky-400"> CorefinXperts</b>, Pune.
-          </p>
+                <span className="relative inline-flex items-center font-extrabold text-[#2563EB]">
+                  {typedText}
 
-          <Link to="/contact">
-            <button
-              className="px-8 py-3 border border-sky-400 rounded-lg
-                         text-sky-400 font-medium
-                         hover:bg-sky-400 hover:text-black
-                         hover:shadow-[0_0_20px_#00bfff]
-                         hover:-translate-y-1
-                         transition-all duration-300"
-            >
-              Contact Me
-            </button>
-          </Link>
-        </div>
+                  {/* blinking cursor */}
+                  <span className="ml-1 w-[2px] h-6 bg-[#2563EB] animate-blink" />
+                </span>
+              </h2>
 
-        <div>
-          <img
-            src={imag1}
-            alt="Kunal"
-            className="w-[340px] h-[400px] object-cover
-                       rounded-[60%_40%_60%_40%]
-                       shadow-[0_0_30px_#00bfff]
-                       animate-[float_4s_ease-in-out_infinite]
-                       hover:scale-105
-                       hover:rounded-[40%_60%_40%_60%]
-                       transition-all duration-700"
-          />
-        </div>
-      </section>
+              <p className="text-gray-600 mt-6 leading-relaxed">
+                I’m a Java Full Stack Developer with a strong foundation in
+                Information Technology. I build scalable backend services using
+                Spring Boot and modern responsive UIs using React + Tailwind.
+              </p>
 
-      <section className="text-center px-6 pb-28">
+              {/* Chips */}
+              <div className="flex flex-wrap gap-3 mt-7">
+                {chips.map((chip, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full
+                               bg-gray-100 text-gray-700
+                               text-sm font-semibold
+                               hover:bg-[#0B1B3A] hover:text-white
+                               transition"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
 
-        <h1 className="text-4xl font-bold text-sky-400 mb-14 drop-shadow-[0_0_12px_#00bfff]">
-          My Projects
-        </h1>
+              {/* Location + phone */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-7 text-gray-600 font-medium">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <span>Dhule, Maharashtra</span>
+                </div>
 
-        <div
-          className="flex flex-wrap justify-center gap-10 cursor-pointer"
-          onClick={() => navigate("/Project")}
-        >
-          <div
-            className="bg-[#191919]/90 w-[320px] p-6 rounded-xl
-                       shadow-[0_0_12px_rgba(0,191,255,0.3)]
-                       hover:-translate-y-2
-                       hover:shadow-[0_0_30px_#00bfff]
-                       transition-all duration-500"
-          >
-            <img
-              src={airplaneImage}
-              alt="Flight"
-              className="w-full h-[180px] object-cover rounded-lg mb-4"
-            />
-            <h2 className="text-xl font-semibold text-white">
-              Flight Booking Application
-            </h2>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faPhone} />
+                  <span>+91 7719000398</span>
+                </div>
+              </div>
+
+              {/* Social icons */}
+              <div className="flex items-center gap-5 mt-8 text-2xl text-gray-500">
+                <a
+                  href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#0B1B3A] transition"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+
+                <a
+                  href="https://wa.me/917719000398"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#0B1B3A] transition"
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </a>
+
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#0B1B3A] transition"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+
+                <a
+                  href="https://github.com/kunalpawar55"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#0B1B3A] transition"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
+
+              {/* Button */}
+              <button
+                onClick={() => navigate("/contact")}
+                className="mt-10 px-8 py-3 rounded-2xl
+                           bg-[#0B1B3A] text-white font-semibold
+                           shadow-md hover:opacity-95 transition"
+              >
+                Contact Me
+              </button>
+            </div>
+
+            {/* RIGHT (Photo Card) */}
+            <div className="flex justify-center md:justify-end">
+              <div
+                className="w-[320px] sm:w-[360px] h-[420px]
+                           rounded-[32px]
+                           bg-white border border-gray-200
+                           shadow-xl
+                           overflow-hidden"
+              >
+                <img
+                  src={photo}
+                  alt="Kunal Pawar"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
-
-          <div
-            className="bg-[#191919]/90 w-[320px] p-6 rounded-xl
-                       shadow-[0_0_12px_rgba(0,191,255,0.3)]
-                       hover:-translate-y-2
-                       hover:shadow-[0_0_30px_#00bfff]
-                       transition-all duration-500"
-          >
-            <img
-              src={clock}
-              alt="Clock"
-              className="w-full h-[180px] object-cover rounded-lg mb-4"
-            />
-            <h2 className="text-xl font-semibold text-white">
-              World Alarm Clock
-            </h2>
-          </div>
         </div>
 
-        <button
-          onClick={() => navigate("/Project")}
-          className="mt-16 px-10 py-3 rounded-full
-                     border border-sky-400 text-sky-400
-                     hover:bg-sky-400 hover:text-black
-                     hover:shadow-[0_0_25px_#00bfff]
-                     hover:-translate-y-1
-                     transition-all duration-300"
-        >
-          View More Projects
-        </button>
+        <Lan_com />
       </section>
-
-      <LanCom />
-      <Footer />
     </div>
   );
 }

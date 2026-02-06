@@ -1,146 +1,184 @@
 import React, { useState } from "react";
-import logo from "../images/logo.png";
 import resumePDF from "../images/Resume_Kunal_J_Pawar.pdf";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faInstagram,
-  faWhatsapp,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+  faHouse,
+  faUser,
+  faBookOpen,
+  faFolderOpen,
+  faBriefcase,
+  faPhone,
+  faMoon,
+  faDownload,
+  faBars,
+  faXmark,
+  faCode,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resumePDF;
-    link.download = "KUNAL_PAWAR_RESUME";
+    link.download = "KUNAL_PAWAR_RESUME.pdf";
     link.click();
+  };
+  const navItems = [
+    { to: "/", icon: faHouse, label: "Home" },
+    { to: "/about", icon: faUser, label: "About" },
+    { to: "/project", icon: faFolderOpen, label: "Projects" },
+    { to: "/certification", icon: faBriefcase, label: "Certification" },
+    { to: "/contact", icon: faPhone, label: "Contact" },
+        { to: "/language", icon: faCode, label: "Skills" },
+
+  ];
+
+  const DesktopNavItem = ({ to, icon, label }) => {
+    return (
+      <NavLink
+        to={to}
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `group flex items-center gap-2
+           px-4 py-3 rounded-2xl
+           transition-all duration-300
+           ${
+             isActive
+               ? "bg-[#0b1b3c] text-white shadow-md"
+               : "text-gray-500 hover:bg-[#0b1b3c] hover:text-white"
+           }`
+        }
+      >
+        <FontAwesomeIcon icon={icon} className="text-xl" />
+
+        <span
+          className="max-w-0 overflow-hidden whitespace-nowrap
+                     group-hover:max-w-[140px]
+                     transition-all duration-300
+                     text-sm font-semibold"
+        >
+          {label}
+        </span>
+      </NavLink>
+    );
+  };
+
+  // 🔥 Mobile nav item
+  const MobileNavItem = ({ to, icon, label }) => {
+    return (
+      <NavLink
+        to={to}
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `flex items-center gap-3 px-4 py-3 rounded-xl
+           font-semibold transition
+           ${
+             isActive
+               ? "bg-[#0b1b3c] text-white"
+               : "text-gray-700 hover:bg-gray-100"
+           }`
+        }
+      >
+        <FontAwesomeIcon icon={icon} className="text-lg" />
+        <span>{label}</span>
+      </NavLink>
+    );
   };
 
   return (
-    <header
-      className="sticky top-0 z-[999]
-                 bg-[rgba(10,10,15,0.95)]
-                 backdrop-blur-xl
-                 border-b border-sky-400/20
-                 shadow-[0_0_15px_rgba(0,191,255,0.15)]"
-    >
-      <div className="flex items-center justify-between px-6 py-4">
-
-        {/* LOGO */}
-        <img
-          src={logo}
-          alt="Logo"
-          onClick={() => navigate("/")}
-          className="w-14 h-14 rounded-full cursor-pointer
-                     hover:scale-110
-                     hover:shadow-[0_0_15px_#00bfff]
-                     transition-all duration-300"
-        />
-
-        {/* HAMBURGER */}
+    <header className="sticky top-0 z-[999] bg-white/60 backdrop-blur-xl">
+      <div className="max-w-6xl mx-auto px-4 py-4">
         <div
-          className="text-sky-400 text-3xl cursor-pointer md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="w-full flex items-center justify-between
+                     bg-white/90 border border-gray-200
+                     shadow-lg rounded-2xl
+                     px-4 py-3"
         >
-          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-        </div>
-
-        {/* NAV LINKS */}
-        <nav
-          className={`md:flex md:items-center md:gap-10
-                      absolute md:static left-0 top-full w-full md:w-auto
-                      bg-[rgba(10,10,15,0.98)] md:bg-transparent
-                      backdrop-blur-xl
-                      transition-all duration-500
-                      overflow-hidden
-                      ${menuOpen ? "max-h-[400px] py-6" : "max-h-0 md:max-h-full"}`}
-        >
-          <ul className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            {[
-              { name: "Home", path: "/" },
-              { name: "Projects", path: "/Project" },
-              { name: "Skills", path: "/Language" },
-              { name: "Contact", path: "/contact" },
-              { name: "About", path: "/About" },
-              { name: "Certification", path: "/certification" },
-            ].map((item, i) => (
-              <li key={i}>
-                <Link
-                  to={item.path}
-                  onClick={() => setMenuOpen(false)}
-                  className="relative text-gray-200 font-medium tracking-wide
-                             hover:text-sky-400
-                             after:absolute after:left-0 after:-bottom-1
-                             after:h-[2px] after:w-0
-                             after:bg-sky-400 after:shadow-[0_0_8px_#00bfff]
-                             hover:after:w-full
-                             after:transition-all after:duration-300"
-                >
-                  {item.name}
-                </Link>
-              </li>
+          {/* DESKTOP NAV */}
+          <div className="hidden lg:flex items-center gap-3">
+            {navItems.map((item) => (
+              <DesktopNavItem
+                key={item.to}
+                to={item.to}
+                icon={item.icon}
+                label={item.label}
+              />
             ))}
-          </ul>
-        </nav>
-{/* RIGHT SECTION */}
-<div className="flex items-center gap-4">
+          </div>
 
-  {/* Resume button — mobile pe hide */}
-  <button
-    onClick={handleDownload}
-    className="hidden md:block
-               border border-sky-400 text-sky-400
-               px-4 py-2 rounded-lg text-sm
-               hover:bg-sky-400 hover:text-black
-               hover:shadow-[0_0_20px_#00bfff]
-               hover:-translate-y-1
-               transition-all duration-300"
-  >
-    Download Resume
-  </button>
+          {/* MOBILE LEFT (Title) */}
+          <div className="lg:hidden flex items-center gap-3">
+            <span className="text-lg font-extrabold text-[#0B1B3A]">
+              Kunal<span className="text-[#2563EB]">Pawar</span>
+            </span>
+          </div>
 
-  <div className="flex gap-4 text-lg md:text-xl">
-    <a
-      href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
-      target="_blank"
-      rel="noreferrer"
-      className="hover:text-sky-400 hover:scale-125 transition"
-    >
-      <FontAwesomeIcon icon={faLinkedin} />
-    </a>
+          <div className="flex items-center gap-3">
+            
 
-    <a
-      href="https://instagram.com"
-      target="_blank"
-      rel="noreferrer"
-      className="hover:text-sky-400 hover:scale-125 transition"
-    >
-      <FontAwesomeIcon icon={faInstagram} />
-    </a>
+            {/* CV */}
+            <button
+              onClick={handleDownload}
+              className="hidden sm:flex items-center gap-2
+                         px-6 py-3 rounded-2xl
+                         bg-[#0b1b3c] text-white font-semibold
+                         shadow-md hover:opacity-95 transition"
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              CV
+            </button>
 
-    <a
-      href="https://wa.me/917719000398"
-      target="_blank"
-      rel="noreferrer"
-      className="hover:text-sky-400 hover:scale-125 transition"
-    >
-      <FontAwesomeIcon icon={faWhatsapp} />
-    </a>
+            {/* Hamburger */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden w-12 h-12 flex items-center justify-center
+                         rounded-xl bg-gray-100 text-gray-700
+                         hover:bg-gray-200 transition"
+            >
+              <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+            </button>
+          </div>
+        </div>
+<div
+  className={`lg:hidden mt-3
+              bg-white/95 border border-gray-200
+              shadow-lg rounded-2xl
+              overflow-hidden
+              transition-all duration-300 ease-in-out
+              ${
+                menuOpen
+                  ? "max-h-[500px] opacity-100 translate-y-0"
+                  : "max-h-0 opacity-0 -translate-y-2"
+              }`}
+>
+  <div className="p-3">
+    <div className="flex flex-col gap-2">
+      {navItems.map((item) => (
+        <MobileNavItem
+          key={item.to}
+          to={item.to}
+          icon={item.icon}
+          label={item.label}
+        />
+      ))}
 
-    <a
-      href="https://github.com/kunalpawar55"
-      target="_blank"
-      rel="noreferrer"
-      className="hover:text-sky-400 hover:scale-125 transition"
-    >
-      <FontAwesomeIcon icon={faGithub} />
-    </a>
+      {/* CV button inside menu (mobile) */}
+      <button
+        onClick={() => {
+          handleDownload();
+          setMenuOpen(false);
+        }}
+        className="mt-2 flex items-center justify-center gap-2
+                   px-4 py-3 rounded-xl
+                   bg-[#0b1b3c] text-white font-semibold
+                   hover:opacity-95 transition"
+      >
+        <FontAwesomeIcon icon={faDownload} />
+        Download CV
+      </button>
+    </div>
   </div>
 </div>
       </div>

@@ -1,67 +1,62 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import internship from "../images/kunalintern.jpg";
 import Fullstack from "../images/Java_certificate.jpg";
 import GENAI from "../images/GenAi.jpg";
 
 export default function Certification() {
   const certidata = [
-    {
-      title: "Internship Certification",
-      image: internship,
-    },
-    {
-      title: "Full Stack Certification",
-      image: Fullstack,
-    },
-    {
-      title: "Generative AI Certification",
-      image: GENAI,
-    },
+    { title: "Internship Certification", image: internship },
+    { title: "Full Stack Certification", image: Fullstack },
+    { title: "Generative AI Certification", image: GENAI },
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Header />
+    <div className="w-full bg-white">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* TITLE */}
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#0B1B3A]">
+            Certifi<span className="text-[#2563EB]">cation</span>
+          </h1>
+          <p className="text-gray-600 mt-3">
+            Courses & credentials I have completed.
+          </p>
+        </div>
 
-      <h1
-        className="text-center py-14 text-4xl font-bold tracking-widest
-                   border-b border-sky-400
-                   text-sky-400
-                   drop-shadow-[0_0_12px_#00bfff]"
-      >
-        Certification
-      </h1>
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {certidata.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-3xl
+                         shadow-md hover:shadow-xl
+                         transition-all duration-300
+                         overflow-hidden"
+            >
+              {/* Title */}
+              <div className="px-6 pt-6 pb-4">
+                <h2 className="text-lg font-extrabold text-[#0B1B3A]">
+                  {item.title}
+                </h2>
+              </div>
 
-      <div className="px-6 py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 place-items-center">
-        {certidata.map((item, index) => (
-          <div
-            key={index}
-            className="bg-[#111] rounded-2xl p-6
-                       border border-sky-400/25
-                       shadow-[0_0_20px_rgba(0,191,255,0.15)]
-                       hover:shadow-[0_0_35px_rgba(0,191,255,0.4)]
-                       hover:-translate-y-2
-                       transition-all duration-500
-                       max-w-sm w-full"
-          >
-            <h2 className="text-xl font-semibold text-center mb-4 text-sky-400">
-              {item.title}
-            </h2>
+              {/* Image */}
+              <div className="px-6 pb-6">
+                <div className="rounded-2xl overflow-hidden border border-gray-200">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-[220px] object-cover
+                               hover:scale-105 transition duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full rounded-xl
-                         hover:scale-105
-                         transition duration-500"
-            />
-          </div>
-        ))}
+        <div className="h-10" />
       </div>
-
-      <Footer />
     </div>
   );
 }

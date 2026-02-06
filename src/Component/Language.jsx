@@ -1,72 +1,121 @@
-import React from "react";
-import Header from "../Component/Header";
-import Footer from "../Component/Footer";
+import React, { useMemo, useState } from "react";
 import { landata } from "../Data/Languagedata";
 
 export default function Language() {
+  const [search, setSearch] = useState("");
+
+  const filteredSkills = useMemo(() => {
+    return landata.filter((item) => {
+      const text =
+        (item.lanname || "") +
+        " " +
+        (item.skills || "") +
+        " " +
+        (item.project || "");
+
+      return text.toLowerCase().includes(search.toLowerCase());
+    });
+  }, [search]);
+
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
-      <Header />
+    <div className="w-full bg-white">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* TITLE */}
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#0B1B3A]">
+            My <span className="text-[#2563EB]">Skills</span>
+          </h1>
+          <p className="text-gray-600 mt-3">
+            Technologies I use to build full-stack applications.
+          </p>
+        </div>
 
-      <div className="px-6 md:px-20 py-16">
-        <h1 className="text-center text-4xl md:text-5xl font-bold tracking-widest text-sky-400 mb-14">
-          SKILLS
-        </h1>
+        {/* SEARCH */}
+        <div className="max-w-2xl mx-auto mb-10">
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search skills..."
+            className="w-full px-5 py-3 rounded-2xl
+                       border border-gray-200 shadow-sm
+                       outline-none text-gray-700
+                       focus:ring-2 focus:ring-[#2563EB]"
+          />
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {landata.map((item, index) => (
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {filteredSkills.map((item, index) => (
             <div
               key={index}
-              className="relative bg-slate-950 rounded-2xl p-8 text-center
-                         border border-sky-400/20
-                         hover:-translate-y-3
-                         hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]
-                         transition-all duration-500"
+              className="bg-white border border-gray-200 rounded-3xl
+                         shadow-md hover:shadow-xl
+                         transition-all duration-300
+                         p-7"
             >
-              {/* glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
-                              from-transparent via-sky-400/20 to-transparent
-                              opacity-0 hover:opacity-100 transition duration-500" />
+              {/* Top */}
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-14 h-14 rounded-2xl
+                             bg-gray-100 border border-gray-200
+                             flex items-center justify-center"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.lanname}
+                    className="w-9 h-9 object-contain"
+                  />
+                </div>
 
-              <img
-                src={item.img}
-                alt={item.lanname}
-                className="w-24 h-24 mx-auto mb-4 object-contain"
-              />
+                <div>
+                  <h2 className="text-xl font-extrabold text-[#0B1B3A]">
+                    {item.lanname}
+                  </h2>
+                  <p className="text-gray-500 text-sm font-semibold">
+                    Rating: {item.rating}/10
+                  </p>
+                </div>
+              </div>
 
-              <h2 className="text-2xl font-semibold text-sky-400 mb-2">
-                {item.lanname}
-              </h2>
-
-              <p className="text-sm text-gray-300 mb-1">
-                <span className="text-sky-400 font-semibold">Skills:</span>{" "}
+              {/* Skills */}
+              <p className="text-gray-600 text-sm mt-5 leading-relaxed">
+                <span className="font-bold text-[#0B1B3A]">Skills:</span>{" "}
                 {item.skills}
               </p>
 
-              <h3 className="text-sm text-gray-300 mb-1">
-                <span className="text-sky-400 font-semibold">Project:</span>{" "}
+              {/* Project */}
+              <p className="text-gray-600 text-sm mt-2 leading-relaxed">
+                <span className="font-bold text-[#0B1B3A]">Project:</span>{" "}
                 {item.project}
-              </h3>
+              </p>
 
-              <h5 className="text-sm mb-4">
-                <span className="text-sky-400 font-semibold">
-                  Rate Myself:
-                </span>{" "}
-                {item.rating}/10
-              </h5>
+              {/* Progress */}
+              <div className="mt-6">
+                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-[#2563EB] transition-all duration-700"
+                    style={{ width: `${item.rating * 10}%` }}
+                  />
+                </div>
 
-              <div className="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full transition-all duration-700"
-                  style={{ width: `${item.rating * 10}%` }}
-                ></div>
+                <div className="flex justify-between text-xs text-gray-400 mt-2 font-semibold">
+                  <span>Beginner</span>
+                  <span>Expert</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <Footer />
+        {/* Empty state */}
+        {filteredSkills.length === 0 && (
+          <div className="text-center mt-14 text-gray-600 font-semibold">
+            No skills found 😅
+          </div>
+        )}
+
+        <div className="h-10" />
+      </div>
     </div>
   );
 }

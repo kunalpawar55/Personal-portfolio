@@ -1,146 +1,111 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faWhatsapp,
   faInstagram,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
-    <footer
-      className="bg-[#0a0a0a] text-white text-center
-                 px-6 py-16
-                 border-t-2 border-sky-400
-                 animate-[fadeIn_1.2s_ease-in-out]"
-    >
-      <div className="mb-6 flex flex-col items-center">
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-20 h-20 rounded-full mb-3
-                     hover:rotate-12 hover:scale-110
-                     hover:shadow-[0_0_18px_#00aaff]
-                     transition-all duration-500"
-        />
+    <footer className="w-full bg-white border-t border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* TOP */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Left */}
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-extrabold text-[#0B1B3A]">
+              Kunal <span className="text-[#2563EB]">Pawar</span>
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Building experiences with code ⚡
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-semibold tracking-widest text-sky-400
-                       drop-shadow-[0_0_12px_#00aaff]">
-          Kunal Pawar
-        </h2>
-
-        <p className="text-sm text-gray-400 mt-1">
-          Building experiences with code ⚡
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <ul className="flex flex-wrap justify-center gap-6 text-gray-300">
-          <li>
-            <Link
-              to="/"
-              className="hover:text-sky-400 hover:drop-shadow-[0_0_10px_#00aaff]"
-            >
+          {/* Middle Links */}
+          <div className="flex flex-wrap justify-center gap-6 text-gray-600 font-semibold">
+            <Link to="/" className="hover:text-[#0B1B3A] transition">
               Home
             </Link>
-          </li>
-          <li>
-            <Link
-              to="/Project"
-              className="hover:text-sky-400 hover:drop-shadow-[0_0_10px_#00aaff]"
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/Language"
-              className="hover:text-sky-400 hover:drop-shadow-[0_0_10px_#00aaff]"
-            >
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contect"
-              className="hover:text-sky-400 hover:drop-shadow-[0_0_10px_#00aaff]"
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/About"
-              className="hover:text-sky-400 hover:drop-shadow-[0_0_10px_#00aaff]"
-            >
+
+            <Link to="/about" className="hover:text-[#0B1B3A] transition">
               About
             </Link>
-          </li>
-        </ul>
+
+            <Link to="/project" className="hover:text-[#0B1B3A] transition">
+              Projects
+            </Link>
+
+            <Link to="/language" className="hover:text-[#0B1B3A] transition">
+              Skills
+            </Link>
+
+            <Link to="/contact" className="hover:text-[#0B1B3A] transition">
+              Contact
+            </Link>
+          </div>
+
+          {/* Right Social */}
+          <div className="flex items-center gap-5 text-xl text-gray-500">
+            <a
+              href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#0B1B3A] transition"
+              title="LinkedIn"
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+
+            <a
+              href="https://wa.me/917719000398"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#0B1B3A] transition"
+              title="WhatsApp"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/kunal_pawar77"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#0B1B3A] transition"
+              title="Instagram"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+
+            <a
+              href="https://github.com/kunalpawar55"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#0B1B3A] transition"
+              title="GitHub"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+
+            <a
+              href="mailto:kunalpawar9230@gmail.com"
+              className="hover:text-[#0B1B3A] transition"
+              title="Email"
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-gray-200 pt-6 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()}{" "}
+          <span className="font-semibold text-[#0B1B3A]">Kunal Pawar</span>. All
+          Rights Reserved.
+        </div>
       </div>
-
-      <div className="flex justify-center gap-8 text-2xl mb-8">
-        <a
-          href="https://www.linkedin.com/in/kunal-pawar-4b6942289"
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-300
-                     hover:text-sky-400
-                     hover:scale-125
-                     hover:drop-shadow-[0_0_15px_#00aaff]
-                     transition-all duration-300"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-
-        <a
-          href="https://wa.me/7719000398?text=Hello%20Kunal"
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-300
-                     hover:text-sky-400
-                     hover:scale-125
-                     hover:drop-shadow-[0_0_15px_#00aaff]
-                     transition-all duration-300"
-        >
-          <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
-
-        <a
-          href="https://www.instagram.com/kunal_pawar77"
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-300
-                     hover:text-sky-400
-                     hover:scale-125
-                     hover:drop-shadow-[0_0_15px_#00aaff]
-                     transition-all duration-300"
-        >
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
-
-        <a
-          href="mailto:kunalpawar9230@gmail.com"
-          className="text-gray-300
-                     hover:text-sky-400
-                     hover:scale-125
-                     hover:drop-shadow-[0_0_15px_#00aaff]
-                     transition-all duration-300"
-        >
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
-      </div>
-
-      <p className="text-sm text-gray-500 border-t border-gray-800 pt-4">
-        © {new Date().getFullYear()}{" "}
-        <span className="text-sky-400 font-semibold">
-          Kunal Pawar
-        </span>{" "}
-        | All Rights Reserved
-      </p>
     </footer>
   );
 }
