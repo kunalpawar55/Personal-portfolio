@@ -11,15 +11,17 @@ import { useNavigate } from "react-router-dom";
 import photo from "../images/kunalp.jpg";
 import Lancom from "./Lancom";
 
-export default function HeroSection() {
-  const navigate = useNavigate();
- // ✅ Rotating typewriter roles
-  const roles = [
+
+const roles = [
     "Java Full Stack Developer",
     "Spring Boot Developer",
     "React Developer",
     "Backend Developer",
   ];
+export default function HeroSection() {
+  const navigate = useNavigate();
+ // ✅ Rotating typewriter roles
+  
   const chips = [
     "Frontend",
     "React",
