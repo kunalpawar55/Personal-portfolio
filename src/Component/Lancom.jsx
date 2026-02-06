@@ -36,7 +36,6 @@ function Lancom() {
           </p>
         </div>
 
-        {/* SKILLS ROW */}
         <div
           onClick={() => navigate("/language")}
           className="flex gap-5 overflow-x-auto pb-3
@@ -71,7 +70,6 @@ function Lancom() {
           ))}
         </div>
 
-        {/* BUTTON */}
         <div className="flex justify-center mt-10">
           <button
             onClick={() => navigate("/language")}
@@ -79,7 +77,7 @@ function Lancom() {
                        bg-[#0B1B3A] text-white font-bold
                        shadow-md hover:opacity-95 transition"
           >
-            View All Skills
+            View All  Skills
           </button>
         </div>
       </div>
