@@ -9,11 +9,17 @@ import {
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import photo from "../images/kunalp.jpg";
-import Lan_com from "./Lancom";
+import Lancom from "./Lancom";
 
 export default function HeroSection() {
   const navigate = useNavigate();
-
+ // ✅ Rotating typewriter roles
+  const roles = [
+    "Java Full Stack Developer",
+    "Spring Boot Developer",
+    "React Developer",
+    "Backend Developer",
+  ];
   const chips = [
     "Frontend",
     "React",
@@ -25,13 +31,7 @@ export default function HeroSection() {
     "Git",
   ];
 
-  // ✅ Rotating typewriter roles
-  const roles = [
-    "Java Full Stack Developer",
-    "Spring Boot Developer",
-    "React Developer",
-    "Backend Developer",
-  ];
+ 
 
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
@@ -197,7 +197,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <Lan_com />
+        <Lancom />
       </section>
     </div>
   );

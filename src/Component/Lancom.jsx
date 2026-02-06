@@ -9,7 +9,7 @@ import uiux from "../images/th.jpeg";
 import Spring from "../images/Spring.png";
 import { useNavigate } from "react-router-dom";
 
-function Lan_com() {
+function Lancom() {
   const navigate = useNavigate();
 
   const skills = [
@@ -87,4 +87,4 @@ function Lan_com() {
   );
 }
 
-export default Lan_com;
+export default Lancom;

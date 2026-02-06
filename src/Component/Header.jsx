@@ -5,11 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faUser,
-  faBookOpen,
   faFolderOpen,
   faBriefcase,
   faPhone,
-  faMoon,
   faDownload,
   faBars,
   faXmark,
